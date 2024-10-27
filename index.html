@@ -14,19 +14,82 @@
 </head>
 
 <body>
-    <aside>
+    <aside class="aside">
         <img src="./img/Logo.svg" alt="logo">
         <nav>
             <ul class="list-links">
                 <li>
-                    <a href="#" class="link-highlights"></a>
+                    <a href="#" class="link-highlights">Publicar</a>
                 </li>
                 <li>
-                    <a href=""></a>
+                    <a href="#" class="link-feed">
+                        <img src="./img/feed.svg" alt="feed">
+                        Feed
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <img src="./img/account_circle.svg" alt="profile">
+                        Perfil
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <img src="./img/info.svg" alt="info">
+                        Sobre
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <img src="./img/logout.svg" alt="logout">
+                        Sair
+                    </a>
                 </li>
             </ul>
         </nav>
     </aside>
+
+    <main>
+        <div class="container-upload-image">
+            <div class="container-image">
+                <img src="./img/imagem1.png" alt="" class="main-image">
+            </div>
+            <button>Carregar imagem</button>
+            <div class="container-image-name">
+                <p>imagem_projeto.png</p>
+                <img src="./img/close.svg">
+            </div>
+        </div>
+
+        <div class="container-description">
+            <h2>Novo projeto</h2>
+            <form>
+                <div class="container-form">
+                    <label for="nome">Nome do projeto</label>
+                    <input type="text" id="name" name="nome" />
+                </div>
+                <div class="container-form">
+                    <label for="descricao">Descrição</label>
+                    <textarea name="descricao" id="description"></textarea>
+                </div>
+                <div class="container-form">
+                    <label for="categoria">Tags</label>
+                    <input type="text" id="category" name="categoria" />
+                </div>
+                <ul class="list-tags">
+                    <li>
+                        <p>Front-end</p>
+                        <img src="./img/close-black.svg">
+                    </li>
+                </ul>
+                <div class="container-buttons">
+                    <button class="button-delete">Descartar</button>
+                    <button class="button-publish">Publicar</button>
+                </div>
+            </form>
+        </div>
+    </main>
+
     <script src="../javascript/scripts.js"></script>
 </body>
 

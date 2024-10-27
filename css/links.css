@@ -1,0 +1,27 @@
+.list-links {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    margin-top: 80px;
+    align-items: center;
+    list-style-type: none;
+}
+.list-links li a {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    text-decoration: none;
+    color: var(--secundary-color);
+    font-size: 22px;
+}
+
+.list-links li:first-of-type a {
+    color: var(--primary-color);
+}
+
+.link-highlights {
+    border: 1px solid var(--primary-color);
+    padding: 12px 30px;
+    border-radius: 8px;
+}

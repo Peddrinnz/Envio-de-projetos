@@ -1,0 +1,13 @@
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: var(--font-family);
+
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    
+    height: 100vh;
+    gap: 27px;
+    padding: 56px 0;
+}
