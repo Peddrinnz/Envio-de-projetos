@@ -52,9 +52,10 @@
     <main>
         <div class="container-upload-image">
             <div class="container-image">
-                <img src="./img/imagem1.png" alt="" class="main-image">
+                <img src="./img/imagem1.png" class="main-image">
             </div>
-            <button>Carregar imagem</button>
+            <button id="upload-btn">Carregar imagem</button>
+            <input type="file" id="image-upload" accept="image/" style="display: none;">
             <div class="container-image-name">
                 <p>imagem_projeto.png</p>
                 <img src="./img/close.svg">
@@ -90,7 +91,7 @@
         </div>
     </main>
 
-    <script src="../javascript/scripts.js"></script>
+    <script src="../javascript/scripts.js" type="module"></script>
 </body>
 
 </html>
