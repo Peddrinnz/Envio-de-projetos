@@ -1,0 +1,44 @@
+/* @media (min-width: 992px) {
+    body {
+        flex-direction: row;
+    }
+
+    .aside, main {
+        flex: 1; 
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {  
+    body {
+        flex-direction: column; 
+    }
+
+    .aside {
+        width: 100%; 
+        margin-bottom: 16px;
+    }
+
+    main {
+        width: 100%;
+    }
+}
+
+@media (max-width: 767px) { 
+
+    .aside {
+        display: none;
+    }
+
+    #toggleSidebar {
+        display: block;
+        margin: 16px auto;
+    }
+
+    .aside.active {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        margin-bottom: 16px;
+    }
+} 
+*/
