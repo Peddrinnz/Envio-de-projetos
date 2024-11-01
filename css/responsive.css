@@ -1,44 +1,82 @@
-/* @media (min-width: 992px) {
+@media (min-width: 1024px) {
     body {
         flex-direction: row;
-    }
-
-    .aside, main {
-        flex: 1; 
-    }
-}
-
-@media (min-width: 768px) and (max-width: 991px) {  
-    body {
-        flex-direction: column; 
+        align-items: flex-start;
     }
 
     .aside {
-        width: 100%; 
-        margin-bottom: 16px;
+        width: 25%;
+        height: auto;
+        margin-left: 50px;
+    }
+
+    main {
+        width: 75%;
+        display: flex;
+        flex-direction: row;
+        margin-right: 50px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    .aside, main {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .aside {
+        position: sticky;
+        top: 0;
+        margin-bottom: 10px;
+    }
+
+    main {
+        flex-direction: column;
+    }
+}
+
+/* Melhorar a responsividade mobile */
+
+/* @media (max-width: 767px) {
+    body {
+        flex-direction: column;
+    }
+
+    .aside {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px;
+        border-bottom: 1px solid var(--secundary-color);
+    }
+
+    .aside nav {
+        display: none;
+    }
+
+    .aside.show-nav nav {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        margin-top: 15px;
+    }
+
+    .menu-btn {
+        display: block;
+        background: none;
+        border: none;
+        color: var(--text-color);
+        font-size: 24px;
+        cursor: pointer;
     }
 
     main {
         width: 100%;
-    }
-}
-
-@media (max-width: 767px) { 
-
-    .aside {
-        display: none;
+        margin-top: 20px;
     }
 
-    #toggleSidebar {
-        display: block;
-        margin: 16px auto;
+    .container-upload-image, .container-description {
+        width: 100%;
     }
-
-    .aside.active {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-        margin-bottom: 16px;
-    }
-} 
-*/
+} */
