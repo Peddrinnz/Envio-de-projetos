@@ -1,48 +1,57 @@
-export let listTags;
-
 export const inputTags = () => {
-    const inputTag = document.getElementById("category");
-    listTags = document.getElementById("list-tags");
+    const inputTags = document.getElementById("category");
+    const listaTags = document.getElementById("list-tags");
+    const botaoPublicar = document.querySelector(".button-publish");
 
-    
-    listTags.addEventListener("click", (event) => {
-        if(event.target.classList.contains("remove-tag")) {
-            const tagRemove = event.target.parentElement;
-            listTags.removeChild(tagRemove);
+    listaTags.addEventListener("click", (evento) => {
+        if (evento.target.classList.contains("remove-tag")) {
+            const tagQueQueremosRemover = evento.target.parentElement;
+            listaTags.removeChild(tagQueQueremosRemover);
         }
-    })
-    
-    const tagsAvaliable = ["Front-end", "Back-end", "Mobile", "Desktop", "DevOps", "Data Science", "JavaScript"];
-    
-    async function verifyTags (tagText) {
+    });
+
+    const tagsDisponiveis = ["Front-end", "Back-end", "Mobile", "Desktop", "DevOps", "Data Science", "JavaScript"];
+
+    async function verificaTagsDisponiveis(tagTexto) {
         return new Promise(resolve => {
             setTimeout(() => {
-                resolve(tagsAvaliable.includes(tagText));
+                resolve(tagsDisponiveis.includes(tagTexto));
             }, 1000);
-        })
+        });
     }
 
-    inputTag.addEventListener("keypress", async(event) => {
-        if (event.key === "Enter") {
-            event.preventDefault();
-            const tagText = inputTag.value.trim();
-    
-            if (tagText !== "") {
+    inputTags.addEventListener("keypress", async (evento) => {
+        if (evento.key === "Enter") {
+            evento.preventDefault();
+            const tagTexto = inputTags.value.trim();
+            if (tagTexto !== "") {
                 try {
-                    const tagExist = await verifyTags(tagText);
-                    if (tagExist) {
-                        const newTag = document.createElement("li");
-                        newTag.innerHTML = `<p>${tagText}</p> <img src="./img/close-black.svg" class="remove-tag">`;
-                        listTags.appendChild(newTag);
-                        inputTag.value = "";
+                    const tagExiste = await verificaTagsDisponiveis(tagTexto);
+                    if (tagExiste) {
+                        const tagNova = document.createElement("li");
+                        tagNova.innerHTML = `<p>${tagTexto}</p> <img src="./img/close-black.svg" class="remove-tag">`;
+                        listaTags.appendChild(tagNova);
+                        inputTags.value = "";
                     } else {
-                        alert("Essa tag não está disponível");
+                        alert("Tag não foi encontrada.");
                     }
                 } catch (error) {
-                    console.log("Erro ao verificar a tag", error);
-                    alert("Erro ao verificar a tag");
+                    console.error("Erro ao verificar a existência da tag");
+                    alert("Erro ao verificar a existência da tag. Verifique o console.");
                 }
-            }    
-        }    
-    })
-} 
+            }
+        }
+    });
+
+    botaoPublicar.addEventListener("click", (evento) => {
+        evento.preventDefault();
+
+        const nomeDoProjeto = document.getElementById("name").value;
+        const descricaoDoProjeto = document.getElementById("description").value;
+        const tagsProjeto = Array.from(listaTags.querySelectorAll("p")).map((tag) => tag.textContent);
+
+        console.log(nomeDoProjeto);
+        console.log(descricaoDoProjeto);
+        console.log(tagsProjeto);
+    });
+};

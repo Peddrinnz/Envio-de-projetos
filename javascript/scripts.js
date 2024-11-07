@@ -1,7 +1,5 @@
-import { uploadButton } from "./upload.js";
 import { inputTags } from "./tags.js";
-import { publishButton } from "./publish.js";
+import { uploadButton } from "./upload.js";
 
 inputTags();
 uploadButton();
-publishButton();
